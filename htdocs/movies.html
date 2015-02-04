@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="movieApp">
+
+<head>
+
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+	<title>Month of Movies</title>
+
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+	<!-- Angularjs-->
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.5/angular.min.js"></script> 
+
+	<!-- Google magic! -->
+	<script> 
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-59201391-1', 'auto');
+		ga('send', 'pageview');
+	</script>
+</head>
+	
+<body ng-controller="movieCtrl">
+
+	<header>
+	</br>
+		<div class="col-lg-6 col-lg-offset-3 col-xs-12">
+			<!-- Header for nav bar. -->
+			<h2>Ryan's Month of Movies</h2>
+			<hr>
+			<nav id="navagation">
+				<div class="nav-bar">
+				<h4>February Watch List</h4>
+				</div>
+			</nav>   
+		</div>
+	</header>
+
+ 	<div class="container-fluid">
+		<div class="col-lg-6 col-lg-offset-3 table-responsive">
+			<table class="table" >
+				<thead>   
+					<tr>
+						<th><h5 style="display: inline">Sunday   </h5></th>
+						<th><h5 style="display: inline">Monday   </h5></th>
+						<th><h5 style="display: inline">Tuesday  </h5></th>
+						<th><h5 style="display: inline">Wednesday</h5></th>
+						<th><h5 style="display: inline">Thursday </h5></th>
+						<th><h5 style="display: inline">Friday   </h5></th>
+						<th><h5 style="display: inline">Saturday </h5></th>
+					</tr>
+				</thead>
+				
+			<!-- Angular will build each row of the table. | orderBy:sortField | orderBy:sortField:reverse"> -->
+				<tbody>
+					<tr ng-repeat="week in monthOfMovies"> 
+						<td ng-repeat="movie in week" ng-style="{'background': movie.active}">
+							<img src="{{movie.poster}}" style="height: 12em"/>
+							</br>
+							<h6 style="color: black; display: inline; " >{{movie.name}}</h6>
+						</td>
+					<tr>
+				</tbody>
+			</table> 
+
+		</div>
+	</div>
+
+	
+	<!-- <textarea>{{content}}</textarea> FOR TESTING -->
+
+	<!-- Footer nav bar. -->
+    <footer>
+        <div class="container text-center">
+            <h5>Copyright &copy; Ryan Jackman 2014</h5>
+        </div>
+    </footer>
+	
+	<!-- Load file 'ass9.js' after the DOM has loaded. -->
+	<script type="text/javascript" src="/js/movies.js"></script>         
+</body> 
+
+</html>
