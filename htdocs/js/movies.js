@@ -48,7 +48,7 @@ MovieApp.controller("movieCtrl", ['$scope', '$http', function (scope, http){
 		    'vote_average': movieJF['vote_average'],
 		    'release_date': movieJF['release_date'],
 		    'link':         movieJF['homepage'],
-		    'poster':       'http://image.tmdb.org/t/p/w150/' + movieJF['poster_path'],
+		    'poster':       'http://image.tmdb.org/t/p/w154' + movieJF['poster_path'],
 		    'active':       count == scope.date ? 'red' : 'white' // This is super hacky and I'm sorry 
 		});
 		
